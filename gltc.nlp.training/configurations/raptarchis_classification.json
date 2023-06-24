@@ -1,0 +1,57 @@
+{
+  "task": {
+    "operation_mode": "hyperopt",
+    "task_name": "raptarchis_classification",
+    "dataset_type": "json",
+    "dataset": "raptarchis",
+    "cuDNN": true,
+    "decision_type": "multi_class",
+    "task_language": "el",
+    "class_collection": "volume"
+  },
+  "model": {
+    "architecture": "VOL_BERT-BASE-MLTLNG",
+    "document_encoder": "grus",
+    "label_encoder": null,
+    "n_hidden_layers": 1,
+    "hidden_units_size": 300,
+    "dropout_rate": 0.1,
+    "word_dropout_rate": 0.01,
+    "embeddings": "gr/WORD_WORD2VEC.bin",
+    "lr": 0.00002,
+    "batch_size": 8,
+    "epochs": 50,
+    "attention_mechanism": "maxpooling",
+    "return_attention":  false,
+    "hierarchical": false,
+    "token_encoding": "word2vec",
+    "bert": "bert-base-multilingual-uncased"
+  },
+  "hyper_optimization": {
+    "log_name": "",
+    "score_to_track": "micro-F1",
+    "trials": 3,
+    "folds": 1,
+    "n_hidden_layers": [1],
+    "hidden_units_size": [200],
+    "dropout_rate": [0.1],
+    "word_dropout_rate": [0.00],
+    "embeddings": "gr/WORD_WORD2VEC.bin",
+    "learning_rate": [0.00001, 0.00002, 0.00003, 0.00005],
+    "batch_size": [8],
+    "epochs": 50,
+    "attention_mechanism": ["maxpooling"]
+  },
+  "sampling": {
+    "max_sequences_size": 5,
+    "max_sequence_size": 512,
+    "few_threshold": 10,
+    "dynamic_batching": true,
+    "sampling_ratio": null,
+    "split_type": null,
+    "hierarchical": false,
+    "validation_size": 0.2,
+    "max_label_size": 10,
+    "evaluation@k": 10
+  }
+}
