@@ -1,3 +1,5 @@
+
+
 ## Multi-granular Legal Topic Classification on Greek Legislation
 
 Code and data repo for the paper: [Multi-granular Legal Topic Classification on Greek Legislation](https://arxiv.org/abs/2109.15298)\
@@ -22,7 +24,7 @@ language with very limited NLP resources in general.
 ***
 ### Code
 
-Contact me via email for code access.
+Contact me via email for code access. The repository includes the data parser in `gltc.data.parser` and the NLP training scripts in `gltc.nlp.training`.
 
 Word2Vec embeddings available at: http://legislation.di.uoa.gr/publications/ner_word2vec
 
